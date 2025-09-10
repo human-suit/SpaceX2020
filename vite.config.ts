@@ -1,13 +1,15 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filePath = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filePath);
+import path from 'path';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/SpaceX2020/',
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./src/app/App.test.tsx'],
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

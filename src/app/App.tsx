@@ -1,7 +1,7 @@
 // import style from './styles/index.module.scss';
 
 import { Container, MantineProvider, Title } from '@mantine/core';
-import { ListSpaseX } from '@/widgets/';
+import { ListSpaseX } from '@/widgets';
 
 function App() {
   return (

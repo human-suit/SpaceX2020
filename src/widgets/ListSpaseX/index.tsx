@@ -1,12 +1,12 @@
 import { Card } from '@shared/ui';
-import { reducer, initialState } from '@entities/startSpaceX/reducer';
+import { reducer, initialState } from '@/entities/model/startSpaceX/reducer';
 import { useEffect, useReducer, useState } from 'react';
-import { itemSpaseX } from '@/entities/model/startSpaceX/types';
+import type { itemSpaseX } from '@/entities/model/startSpaceX/types';
 import { Box, Flex } from '@mantine/core';
 import { Modal } from '@shared/ui/';
 import DefoltImg from '../../shared/assets/notYeat.jpg';
 
-const ListSpaseX = () => {
+export const ListSpaseX = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<itemSpaseX | null>(null);
@@ -51,7 +51,7 @@ const ListSpaseX = () => {
       {loading ? (
         <p>Loading...</p>
       ) : dataSpaceX && dataSpaceX.length > 0 ? (
-        dataSpaceX.map((item, index) => (
+        dataSpaceX.map((item: itemSpaseX, index: number) => (
           <Box key={`${item.mission_name}-${index}`} style={{ width: 200 }}>
             <Card
               state={{

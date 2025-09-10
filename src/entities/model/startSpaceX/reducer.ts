@@ -1,4 +1,4 @@
-import { itemSpaseX } from './types';
+import type { itemSpaseX } from './types';
 
 export type State = {
   search: string;
