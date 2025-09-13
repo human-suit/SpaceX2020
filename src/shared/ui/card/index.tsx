@@ -14,29 +14,36 @@ const Card = ({ state }: Props) => {
 
   return (
     <MantineCard
-      style={{
-        border: '1px solid #E9ECEE',
-        boxShadow: '0px 4px 8px 0px rgba(34, 60, 80, 0.2)',
-        textAlign: 'center',
-        alignItems: 'center',
-        padding: '10px',
-      }}
-      shadow="sm"
+      shadow="md"
       padding="lg"
       radius="md"
       withBorder
+      style={{
+        padding: '20px 0px',
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        borderRadius: '5px',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+      }}
     >
       <MantineCard.Section>
         <Image
-          style={{ height: '100px' }}
           src={mission_patch_small}
           alt={mission_name}
+          height={100}
+          fit="contain"
         />
       </MantineCard.Section>
 
-      <Group justify="space-between" mt="md" mb="xs">
+      <Group justify="center" mt="md" mb="xs" w="100%">
         <Text
+          size="sm"
+          truncate
           style={{
+            padding: '0px 10px',
+            maxWidth: '210px',
             overflow: 'hidden',
             whiteSpace: 'nowrap',
             textOverflow: 'ellipsis',
@@ -44,20 +51,25 @@ const Card = ({ state }: Props) => {
         >
           {mission_name}
         </Text>
-        <Text size="sm">{rocket_name}</Text>
+        <Text size="sm" c="dimmed">
+          {rocket_name}
+        </Text>
       </Group>
+
       <Button
         onClick={onClick}
-        style={{
-          backgroundColor: '#2182D7',
-          color: 'white',
-          padding: '8px 60px',
-          borderRadius: '8px',
-          border: '0px',
-        }}
         fullWidth
         mt="md"
         radius="md"
+        color="#FFFFFF"
+        bg="#238BE6"
+        style={{
+          width: '180px',
+          height: '40px',
+          borderRadius: '5px',
+          border: '0px',
+          color: '#FFFFFF',
+        }}
       >
         See more
       </Button>
